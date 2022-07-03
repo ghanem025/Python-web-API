@@ -1,8 +1,12 @@
 import webbrowser
+import argparse
 
-new=2
+parser = argparse.ArgumentParser(description='Enter your credentials')
 
-tabUrl = "https://www.google.com/search?q="
-term = input("Enter search query")
+parser.add_argument('Username', type=str, help='Username for bitly API')
+parser.add_argument('Password', type=str, help='Password for bitly API')
+parser.add_argument('token', type=str, help='Access token')
 
-webbrowser.open(tabUrl+term, new=0, autoraise=True)
+args = parser.parse_args()
+
+auth_res = request.post(args.token, auth(args.Username,Password))
