@@ -43,6 +43,7 @@ description = driver.find_element(by=By.XPATH, value='//input[@id="repository_de
 description.send_keys(repo_description)
 
 time.sleep(2)
+print("Sleeping")
 
 if create_repo := driver.find_element(by=By.XPATH, value='//button[@class="btn-primary btn" and @type="submit"]'):
     create_repo.click()
